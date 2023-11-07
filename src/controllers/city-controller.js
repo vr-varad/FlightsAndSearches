@@ -44,7 +44,7 @@ const update = async (req,res)=>{
     return res.status(200).json({
       data: response,
       success: true,
-      message : 'Successfully deleted a city',
+      message : 'Successfully updated a city',
       err: {}
     })
   }catch(error){
@@ -52,7 +52,7 @@ const update = async (req,res)=>{
     return res.status(500).json({
       data: {},
       success: false,
-      message: 'Not able to delete the city',
+      message: 'Not able to update the city',
       err: {error}
     })
   }
