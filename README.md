@@ -23,3 +23,17 @@ the following piece of json
 
 - Once you've added your db config as listed above, go to the src folder from
 your terminat and execute 'npx sequelize db:create`.
+and then exexute 
+`npx sequelize db:migrate`
+
+## DB design
+
+- Airplane Table
+- Flight Table
+- City
+- Airport Table
+
+- A flight belong to an airplane but an airplane can belong to many flights.
+- A city has many airports but an airport belong to one city.
+- A airport can have many flight but a flight belong to on airport.
+
