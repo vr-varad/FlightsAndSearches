@@ -37,3 +37,8 @@ and then exexute
 - A city has many airports but an airport belong to one city.
 - A airport can have many flight but a flight belong to on airport.
 
+## Tables
+
+### City Table -> id , name, createdAt, updatedAt
+### Airport Table -> id, name, address, city_id, createdAt, updatedAt
+    RelationShips -> City has many airports and airport belong tp a city.
