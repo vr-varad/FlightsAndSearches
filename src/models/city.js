@@ -14,9 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   City.init({
-    name: DataTypes.STRING,
-    allowNull : false,
-    unique: true
+   name: {
+        type: DataTypes.STRING,
+        allowNull: false, // Add this line to make the attribute non-nullable
+        unique: true,
+   }
   }, {
     sequelize,
     modelName: 'City',
