@@ -42,3 +42,8 @@ and then exexute
 ### City Table -> id , name, createdAt, updatedAt
 ### Airport Table -> id, name, address, city_id, createdAt, updatedAt
     RelationShips -> City has many airports and airport belong tp a city.
+```
+npx sequelize model:generate --name Airport --attributes name:String,address:String,city_id:integer
+```
+
+In simple terms, running db.sequelize.sync({ alter: true }) is like telling Sequelize to automatically make changes to your database so that it matches your model definitions. It's a way to keep your database up-to-date with your code without manually writing SQL queries to create or modify tables. This can be useful during development when you're frequently changing your models. However, it's important to be cautious when using this in a production environment, as it can modify the database schema and may lead to data loss or unintended consequences if not used carefully.
