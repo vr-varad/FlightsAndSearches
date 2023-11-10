@@ -1,6 +1,6 @@
-const {Op} = require('sequelize')
+const {Op, sequelize} = require('sequelize')
 
-const {City} = require('../models/index')
+const {City, Airport} = require('../models/index')
 
 class CityRepository{
   async createCity({name}){
@@ -71,6 +71,26 @@ class CityRepository{
     } catch (error) {
       console.log('Something went Wrong inside the repository level')
       throw {error}
+    }
+  }
+
+  async getCityAirports(cityId){
+    try {
+      if(process.env.SYNC_DB){
+        db.sequelize.sync({alter: true})
+      }
+      const city = await City.findOne({
+        where:{
+          id: cityId
+        }
+      })
+      const airports = await city.getAirports()
+      return airports
+      
+    } catch (error) {
+      console.log('Something went Wrong inside the repository level')
+      throw {error}
+      
     }
   }
 }
